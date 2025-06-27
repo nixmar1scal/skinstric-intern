@@ -1,0 +1,9 @@
+.landing-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  overflow: hidden;
+  padding: 40px;
+  font-family: 'Helvetica Neue', sans-serif;
+}
