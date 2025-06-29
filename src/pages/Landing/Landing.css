@@ -3,7 +3,125 @@
   width: 100%;
   height: 100vh;
   background: #fff;
-  overflow: hidden;
-  padding: 40px;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.title-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.title-container.shift-left {
+  transform: translate(-48vw, -50%);
+}
+
+.title-main {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.title-sub {
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.landing-description {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #1a1b1c;
+  max-width: 300px;
+}
+
+.rectangle {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.rectangle.left {
+  left: 0;
+}
+
+.rectangle.right {
+  right: 0;
+}
+
+.side-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-button-left {
+  left: 16px;
+}
+
+.side-button-right {
+  right: 16px;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.button-icon {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.button-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.button-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1a1b1c;
+}
+
+.button-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rombus-outline {
+  position: absolute;
+  width: 265px;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  z-index: 0;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.rectangle.right,
+.rombus-outline {
+  opacity: 0.9;
+  transition: opacity 0.4s ease;
 }

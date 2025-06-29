@@ -1,0 +1,53 @@
+.intro-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.to-start {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+}
+
+.intro-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.intro-text {
+    transform: translateY(-150%);
+}
+
+.click-to-type {
+    font-size: 10px;
+    margin-bottom: 10px;
+    color: #aaa;
+}
+
+.intro-title {
+    font-size: 36px;
+    font-weight: 500;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    padding-bottom: 2px;
+}
+
+.intro-back {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  color: #1a1b1c;
+}
+
+.back-icon {
+    width: 40px;
+    height: 40px;
+}

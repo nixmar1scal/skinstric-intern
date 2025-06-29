@@ -1,13 +1,32 @@
-import React from 'react'
-import Landing from './pages/Landing/Landing'
+import React from "react";
+import Landing from "./pages/Landing/Landing";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import Intro from "./pages/Intro/Intro";
 
+function AnimateRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/intro" element={<Intro />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 const App = () => {
   return (
-    <>
-    <Landing /> 
-    </>
-  )
-}
+    <Router>
+      <AnimateRoutes />
+    </Router>
+  );
+};
 
-export default App
+export default App;
