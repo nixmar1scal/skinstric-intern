@@ -1,4 +1,4 @@
-import React, { useState, useNavigate } from "react";
+import React, { useState } from "react";
 import "./Landing.css";
 import Header from "../../components/Header/Header";
 import leftbutton from "../../assets/buttin-icon-shrunk2.svg";
@@ -6,11 +6,13 @@ import rightbutton from "../../assets/buttin-icon-shrunk.svg";
 import rectangleRight from "../../assets/Rectangle 2778.svg";
 import rectangleLeft from "../../assets/Rectangle 2779.png";
 import rombuses from "../../assets/rombuses.svg";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Landing() {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
-  
+
   return (
     <div className="landing-container">
       <Header />
