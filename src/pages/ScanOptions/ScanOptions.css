@@ -1,0 +1,62 @@
+.scan-options-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.options-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+}
+
+.option-block {
+    position: relative;
+    text-align: center;
+}
+
+.scan-access {
+  position: absolute;
+  top: 27%;
+  left: 171px;
+  width: 153px;
+}
+
+.gallery-access {
+  position: absolute;
+  top: 55%;
+  right: 169px;
+  width: 143px;
+}
+
+.rombus-frame {
+    width: 300px;
+    max-width: 100%;
+}
+
+.icon-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.option-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.option-label {
+    margin-top: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
