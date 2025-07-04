@@ -52,6 +52,7 @@
 .option-icon {
     width: 70px;
     height: 70px;
+    cursor: pointer;
 }
 
 .option-label {

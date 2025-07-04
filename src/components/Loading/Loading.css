@@ -1,0 +1,23 @@
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.loading-frame {
+  width: 300px;
+  animation: rotate 4s linear infinite;
+}
+
+.loading-text {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
