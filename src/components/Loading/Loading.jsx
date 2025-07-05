@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Loading.css"
-import loadingFrame from "../../assets.loading.svg"
+import loadingFrame from "../../assets/loading.svg"
 
 function Loading() {
   return (

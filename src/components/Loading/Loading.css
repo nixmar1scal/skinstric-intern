@@ -7,7 +7,7 @@
 }
 
 .loading-frame {
-  width: 300px;
+  width: 700px;
   animation: rotate 4s linear infinite;
 }
 
