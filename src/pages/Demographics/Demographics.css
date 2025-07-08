@@ -1,67 +1,140 @@
-/* Demographics.css */
-
 .demographics-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box; 
+  flex-shrink: 0; 
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+  color: #1A1B1C;
+}
+
+.intro-badge {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #1A1B1C
+}
+
+.title-content {
+  flex-shrink: 0;
+  padding: 10px 30px 30px 37px;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.analys {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.sub-title {
+  font-size: 12px;
+  color: #616161;
+  text-transform: uppercase;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
+  min-height: 0;
+}
+
+.content-columns {
+  display: flex;
+  flex: 1;
+  overflow: auto;
 }
 
 .sidebar {
   width: 200px;
-  background-color: white;
-  border-right: 1px solid #ccc;
+  background-color: #f7f7f8;
+  border-top: 1px solid;
   display: flex;
   flex-direction: column;
-  padding-top: 40px;
-  padding-left: 20px;
+  padding: 40px 20px 0 20px;
 }
 
 .main-label {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 32px;
   text-transform: uppercase;
   color: black;
 }
 
 .category-tab {
-  font-size: 14px;
-  padding: 12px 0;
+  font-size: 12px;
+  padding: 8px 0;
   cursor: pointer;
-  color: #666;
+  color: #999;
   text-transform: uppercase;
-  border-left: 4px solid transparent;
-  margin-bottom: 10px;
+  border-left: 3px solid transparent;
+  margin-bottom: 16px;
   transition: all 0.2s ease;
 }
 
 .category-tab.active {
   color: black;
-  border-left: 4px solid black;
-  font-weight: bold;
+  border-left: 3px solid black;
+  font-weight: 500;
 }
 
 .center-panel {
   flex: 1;
   background-color: #f7f7f8;
+  border-top: 1px solid;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 30px;
+  margin: 0 10px;
 }
 
 .selected-text {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: capitalize;
   margin-bottom: 20px;
   color: #333;
 }
 
-.confidece-circle {
+.confidence-circle {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -75,37 +148,43 @@
   background-color: white;
 }
 
+.percentage {
+  font-size: 36px;
+  font-weight: bold;
+}
+
 .disclaimer {
   font-size: 12px;
   color: #999;
   margin-top: 10px;
   text-align: center;
-  width: 80%;
+  width: 60%;
 }
 
 .confidence-list {
   width: 280px;
-  background-color: white;
-  border-left: 1px solid #ccc;
+  background-color: #f7f7f8;
+  border-top: 1px solid;
   padding: 40px 24px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .list-header {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
   color: #666;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .confidence-item {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 8px 0;
   font-size: 14px;
   cursor: pointer;
   border-bottom: 1px solid #eee;
@@ -118,19 +197,51 @@
   color: white;
   font-weight: bold;
   border-radius: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-.buttons {
+.bottom-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: white;
+  gap: 12px;
+}
+
+.bottom-content .back-button {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-content .back-button img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.bottom-content .disclaimer {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.bottom-content .buttons {
+  display: flex;
   gap: 12px;
 }
 
 .reset-btn,
 .confirm-btn {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
@@ -155,12 +266,12 @@
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 
 .back-button img {
   margin-right: 8px;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
