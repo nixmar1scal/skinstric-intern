@@ -120,7 +120,7 @@ function Demographics() {
       </div>
 
       <div className="bottom-content">
-        <div className="back-button" onClick={() => navigate("/")}>
+        <div className="back-button" onClick={() => navigate("/scan-options")}>
           <img src={leftbuttom} alt="back button" />
           <span className="back-text">BACK</span>
         </div>

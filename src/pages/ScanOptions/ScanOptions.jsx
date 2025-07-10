@@ -1,27 +1,26 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-// Assets
 import rombusFrame from "../../assets/rombuses2.svg";
 import cameraIcon from "../../assets/camera.svg";
 import galleryIcon from "../../assets/gallery.svg";
 import leftbuttom from "../../assets/buttin-icon-shrunk2.svg";
 import titleAI from "../../assets/title.svg";
 import titleAI2 from "../../assets/title2.svg";
-// Components
 import Navbar from "../../components/Navbar/Navbar";
 import Loading from "../../components/Loading/Loading";
-// Styles
+import CameraLoading from "../../components/CameraLoading/CameraLoading";
 import "./ScanOptions.css";
 
-// Constants
-const API_URL = "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo";
+const API_URL =
+  "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo";
 const MAX_FILE_SIZE = 2 * 1024 * 1024;
 
 function ScanOptions() {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [cameraLoading, setCameraLoading] = useState(false);
 
   const handleGalleryClick = () => {
     fileInputRef.current?.click();
@@ -54,7 +53,10 @@ function ScanOptions() {
           { headers: { "Content-Type": "application/json" } }
         );
 
-        localStorage.setItem("demographicsData", JSON.stringify(response.data.data));
+        localStorage.setItem(
+          "demographicsData",
+          JSON.stringify(response.data.data)
+        );
         setTimeout(() => navigate("/demographics"), 1000);
       } catch (error) {
         console.error("Upload failed:", error.response?.data || error.message);
@@ -66,6 +68,7 @@ function ScanOptions() {
     reader.readAsDataURL(file);
   };
 
+  if (cameraLoading) return <CameraLoading />;
   if (isLoading) return <Loading />;
 
   return (
@@ -77,8 +80,14 @@ function ScanOptions() {
       </div>
 
       <div className="options-wrapper">
-        {/* Camera Option (Not implemented yet) */}
-        <div className="option-block">
+        {/* Camera Optionn */}
+        <div
+          className="option-block"
+          onClick={() => {
+            setCameraLoading(true);
+            setTimeout(() => navigate("/camera-capture"), 2500);
+          }}
+        >
           <img src={rombusFrame} alt="rombus frame" className="rombus-frame" />
           <div className="icon-content">
             <img src={cameraIcon} alt="camera icon" className="option-icon" />
@@ -99,7 +108,11 @@ function ScanOptions() {
           <div className="icon-content">
             <img src={galleryIcon} alt="gallery icon" className="option-icon" />
           </div>
-          <img src={titleAI2} alt="Gallery AI title" className="gallery-access" />
+          <img
+            src={titleAI2}
+            alt="Gallery AI title"
+            className="gallery-access"
+          />
         </div>
       </div>
 
