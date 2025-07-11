@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CameraCapture.css";
 import rombusIcon from "../../assets/buttin-icon-shrunk2.svg";
-import cameraBtn from "../../assets/camera.svg";
+import captureBtn from "../../assets/capturebtn.svg";
 
 function CameraCapture() {
   const videoRef = useRef(null);
@@ -44,7 +44,7 @@ function CameraCapture() {
     const imageBase64 = canvas.toDataURL("image/png");
     localStorage.setItem("capturedImage", imageBase64);
 
-    navigate("/demographics");
+    navigate("/analysis-overview");
   };
 
   return (
@@ -54,8 +54,8 @@ function CameraCapture() {
       <div className="branding">SKINSTRIC</div>
 
       <button className="take-pic-btn" onClick={handleTakePicture}>
-        <img src={cameraBtn} alt="Take Picture" />
         <span>TAKE PICTURE</span>
+        <img src={captureBtn} alt="Take Picture" />
       </button>
 
       <div className="diamond-back" onClick={() => navigate("/scan-options")}>

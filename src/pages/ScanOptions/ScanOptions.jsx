@@ -57,7 +57,7 @@ function ScanOptions() {
           "demographicsData",
           JSON.stringify(response.data.data)
         );
-        setTimeout(() => navigate("/demographics"), 1000);
+        setTimeout(() => navigate("/analysis-overview"), 1000);
       } catch (error) {
         console.error("Upload failed:", error.response?.data || error.message);
         alert("Image upload failed. Please try again.");
