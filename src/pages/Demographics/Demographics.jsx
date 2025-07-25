@@ -11,19 +11,6 @@ function Demographics() {
   const [selectedValue, setSelectedValue] = useState("");
   const [selectedConfidence, setSelectedConfidence] = useState(0);
 
-  useEffect(() => {
-    const stored = localStorage.getItem("demographicsData");
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      setData(parsed);
-      const topEntry = getTopEntry(parsed[selectedCategory]);
-      setSelectedValue(topEntry.label);
-      setSelectedConfidence(topEntry.value);
-    } else {
-      console.warn("No data found in localStorage");
-    }
-  }, [selectedCategory]);
-
   const getTopEntry = (categoryObj) => {
     const entries = Object.entries(categoryObj || {});
     const sorted = entries.sort((a, b) => b[1] - a[1]);
@@ -42,6 +29,19 @@ function Demographics() {
     setSelectedConfidence(topEntry.value);
   };
 
+  useEffect(() => {
+    const stored = localStorage.getItem("demographicsData");
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      setData(parsed);
+      const topEntry = getTopEntry(parsed[selectedCategory]);
+      setSelectedValue(topEntry.label);
+      setSelectedConfidence(topEntry.value);
+    } else {
+      console.warn("No data found in localStorage");
+    }
+  }, [selectedCategory]);
+
   if (!data) return <div>Loading...</div>;
 
   const sortedEntries = Object.entries(data[selectedCategory]).sort(
@@ -56,7 +56,7 @@ function Demographics() {
           <span className="intro-badge">[ ANALYSIS ]</span>
         </div>
       </div>
-      
+
       <div className="title-content">
         <div className="analys">A.I. ANALYSIS</div>
         <div className="title">DEMOGRAPHICS</div>
@@ -66,35 +66,56 @@ function Demographics() {
       <div className="main-content">
         <div className="content-columns">
           <div className="sidebar">
-            <div className="main-label">{selectedValue.toUpperCase()}</div>
             <div
-              className={`category-tab ${
-                selectedCategory === "race" ? "active" : ""
+              className={`group-sidebar ${
+                selectedCategory === "race" ? "selected" : ""
               }`}
               onClick={() => setSelectedCategory("race")}
             >
-              RACE
+              {selectedCategory === "race" && (
+                <div className="sidebar-top-label">
+                  {selectedValue.charAt(0).toUpperCase() +
+                    selectedValue.slice(1)}
+                </div>
+              )}
+              <div className="category-tab">RACE</div>
             </div>
+
             <div
-              className={`category-tab ${
-                selectedCategory === "age" ? "active" : ""
+              className={`group-sidebar ${
+                selectedCategory === "age" ? "selected" : ""
               }`}
               onClick={() => setSelectedCategory("age")}
             >
-              AGE
+              {selectedCategory === "age" && (
+                <div className="sidebar-top-label">
+                  {selectedValue.charAt(0).toUpperCase() +
+                    selectedValue.slice(1)}
+                </div>
+              )}
+              <div className="category-tab">AGE</div>
             </div>
+
             <div
-              className={`category-tab ${
-                selectedCategory === "gender" ? "active" : ""
+              className={`group-sidebar ${
+                selectedCategory === "gender" ? "selected" : ""
               }`}
               onClick={() => setSelectedCategory("gender")}
             >
-              GENDER
+              {selectedCategory === "gender" && (
+                <div className="sidebar-top-label">
+                  {selectedValue.charAt(0).toUpperCase() +
+                    selectedValue.slice(1)}
+                </div>
+              )}
+              <div className="category-tab">SEX</div>
             </div>
           </div>
 
           <div className="center-panel">
-            <div className="selected-text">{selectedValue}</div>
+            <div className="selected-text">
+              {selectedValue.charAt(0).toUpperCase() + selectedValue.slice(1)}
+            </div>
             <div className="confidence-circle">
               <div className="percentage">
                 {(selectedConfidence * 100).toFixed(0)}%

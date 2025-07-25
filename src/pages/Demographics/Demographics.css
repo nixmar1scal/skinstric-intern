@@ -5,6 +5,7 @@
   font-family: 'Inter', sans-serif;
 }
 
+/* ───────── NAVIGATION BAR ───────── */
 .navbar-content {
   display: flex;
   justify-content: space-between;
@@ -12,29 +13,29 @@
   padding: 20px 40px;
   background-color: white;
   width: 100%;
-  box-sizing: border-box; 
-  flex-shrink: 0; 
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .logo-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .logo-img {
   width: 100px;
   height: auto;
-  color: #1A1B1C;
 }
 
 .intro-badge {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #1A1B1C
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #1A1B1C;
 }
 
+/* ───────── TITLE SECTION ───────── */
 .title-content {
   flex-shrink: 0;
   padding: 10px 30px 30px 37px;
@@ -64,6 +65,7 @@
   text-transform: uppercase;
 }
 
+/* ───────── LAYOUT CONTAINER ───────── */
 .main-content {
   flex: 1;
   display: flex;
@@ -80,48 +82,68 @@
   margin: 0 20px;
 }
 
+/* ───────── SIDEBAR ───────── */
 .sidebar {
   width: 200px;
-  background-color: #f7f7f8;
   border-top: 1px solid;
   display: flex;
   flex-direction: column;
-  padding: 40px 20px 0 20px;
 }
 
-.main-label {
+.group-sidebar {
+  background-color: #f7f7f8;
+  border-top: 1px solid;
+  margin-bottom: 5px;
+  padding: 30px 10px;
+  cursor: pointer;
+}
+
+.group-sidebar:hover {
+  background-color: #e1e1e2;
+  transition: all 0.3s ease;
+}
+
+.group-sidebar:first-child {
+  border-top: none;
+}
+
+.group-sidebar.selected {
+  background-color: black;
+  color: white;
+}
+
+.sidebar-top-label {
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 32px;
-  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-transform: capitalize;
   color: black;
+}
+
+.group-sidebar.selected .sidebar-top-label {
+  color: white;
 }
 
 .category-tab {
   font-size: 12px;
-  padding: 8px 0;
-  cursor: pointer;
-  color: #999;
-  text-transform: uppercase;
-  border-left: 3px solid transparent;
-  margin-bottom: 16px;
-  transition: all 0.2s ease;
-}
-
-.category-tab.active {
   color: black;
-  border-left: 3px solid black;
+  text-transform: uppercase;
   font-weight: 500;
 }
 
+.group-sidebar.selected .category-tab {
+  color: white;
+}
+
+/* ───────── CENTER PANEL ───────── */
 .center-panel {
   flex: 1;
   background-color: #f7f7f8;
   border-top: 1px solid;
   display: flex;
   flex-direction: column;
-  align-items: end;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
   position: relative;
   padding: 30px;
   margin: 0 10px;
@@ -129,50 +151,40 @@
 
 .selected-text {
   position: absolute;
-  top: 33px;
-  left: 20px;
+  top: 24px;
+  left: 24px;
   font-size: 24px;
   font-weight: 500;
   text-transform: capitalize;
-  margin-bottom: 20px;
   color: #333;
 }
 
 .confidence-circle {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 3px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 16px;
   background-color: white;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 .percentage {
-  font-size: 36px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 300;
 }
 
-.disclaimer {
-  font-size: 12px;
-  color: #999;
-  margin-top: 10px;
-  text-align: center;
-  width: 60%;
-}
-
+/* ───────── CONFIDENCE LIST ───────── */
 .confidence-list {
   width: 280px;
   background-color: #f7f7f8;
   border-top: 1px solid;
-  padding: 40px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .list-header {
@@ -182,13 +194,13 @@
   font-weight: 500;
   text-transform: uppercase;
   color: #666;
-  margin-bottom: 20px;
+  padding: 8px 8px;
 }
 
 .confidence-item {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: 8px 8px;
   font-size: 14px;
   cursor: pointer;
   border-bottom: 1px solid #eee;
@@ -199,12 +211,11 @@
 .confidence-item.selected {
   background-color: black;
   color: white;
-  font-weight: bold;
-  border-radius: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
+  font-weight: 600;
+  padding: 10px;
 }
 
+/* ───────── BOTTOM SECTION ───────── */
 .bottom-content {
   display: flex;
   justify-content: space-between;
@@ -223,9 +234,10 @@
   text-transform: uppercase;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
-.bottom-content .back-button img {
+.back-button img {
   width: 30px;
   height: 30px;
   margin-right: 8px;
@@ -243,40 +255,25 @@
   gap: 12px;
 }
 
+/* ───────── BUTTONS ───────── */
 .reset-btn,
 .confirm-btn {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 12px;
+  font-weight: 600;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .reset-btn {
   background-color: white;
-  border: 1px solid black;
+  border: 1.5px solid black;
   color: black;
 }
 
 .confirm-btn {
   background-color: black;
   color: white;
-}
-
-.back-button {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-.back-button img {
-  margin-right: 8px;
-  width: 30px;
-  height: 30px;
 }
