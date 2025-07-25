@@ -81,3 +81,92 @@
   height: 40px;
   margin-right: 10px;
 }
+
+@media (max-width: 1024px) {
+  .intro-main {
+    width: 500px;
+    height: 500px;
+  }
+
+  .intro-input {
+    font-size: 36px;
+    max-width: 360px;
+  }
+
+  .click-to-type {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 768px) {
+  .to-start {
+    font-size: 13px;
+    left: 20px;
+    top: 60px;
+  }
+
+  .intro-main {
+    width: 380px;
+    height: 380px;
+  }
+
+  .intro-text {
+    top: 48%;
+  }
+
+  .intro-input {
+    font-size: 28px;
+    max-width: 240px;
+  }
+
+  .click-to-type {
+    font-size: 8px;
+    margin-bottom: 8px;
+  }
+
+  .intro-back {
+    font-size: 11px;
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .back-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .to-start {
+    font-size: 11px;
+    top: 50px;
+    left: 16px;
+  }
+
+  .intro-main {
+    width: 300px;
+    height: 300px;
+  }
+
+  .intro-input {
+    font-size: 22px;
+    max-width: 185px;
+  }
+
+  .click-to-type {
+    font-size: 7px;
+  }
+
+  .intro-back {
+    font-size: 10px;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .back-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+  }
+}

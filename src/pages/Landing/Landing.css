@@ -125,3 +125,60 @@
   opacity: 0.9;
   transition: opacity 0.4s ease;
 }
+
+@media (max-width: 1024px) {
+  .title-main,
+  .title-sub {
+    font-size: 48px;
+  }
+
+  .rectangle {
+    width: 150px;
+  }
+
+  .rombus-outline {
+    width: 200px;
+  }
+
+  .button-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .button-text {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-main,
+  .title-sub {
+    font-size: 28px;
+  }
+
+  .rectangle {
+    width: 90px;
+  }
+
+  .rombus-outline {
+    width: 120px;
+  }
+
+  .landing-description {
+    display: none;
+  }
+
+  .button-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .button-text {
+    font-size: 9px;
+  }
+
+  .side-button {
+    bottom: 16px;
+    top: auto;
+  }
+}

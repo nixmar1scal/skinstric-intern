@@ -65,3 +65,59 @@
 .back-icon {
     width: 35px;
 }
+
+@media (max-width: 768px) {
+  .options-wrapper {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .option-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scan-access,
+  .gallery-access {
+    position: static;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .rombus-frame {
+    width: 220px;
+  }
+
+  .option-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .option-label {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .rombus-frame {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  .option-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .option-label {
+    font-size: 10px;
+  }
+
+  .back-icon {
+    width: 28px;
+  }
+}
